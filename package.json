@@ -2,7 +2,7 @@
   "name": "@bjerk/brand",
   "version": "0.0.0",
   "main": "dist/index.ts",
-  "repository": "https://github.com/github:bjerkio/brand",
+  "repository": "github:bjerkio/brand",
   "author": "Bjerk AS",
   "license": "Apache-2.0",
   "files": [
