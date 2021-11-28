@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.theme.json",
+  "compilerOptions": {
+    "declaration": false,
+    "module": "CommonJS",
+    "outDir": "./dist/cjs"
+  }
+}

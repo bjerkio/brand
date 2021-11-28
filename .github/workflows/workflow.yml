@@ -1,0 +1,42 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+          cache: yarn
+
+      - run: yarn install
+
+      - run: yarn run build
+
+      - if: ${{ steps.release.outputs.release_created }}
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_ENV: production
+
+      - run: yarn run docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.BJERKBOT_GITHUB_TOKEN }}
+          publish_dir: ./out
