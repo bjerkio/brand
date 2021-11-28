@@ -20,6 +20,9 @@ jobs:
 
       - run: yarn install
       - run: yarn download
+        env:
+          FIGMA_URL: ${{ secrets.FIGMA_URL }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
