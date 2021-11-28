@@ -26,8 +26,8 @@ import React from 'react';
 import { HiArrowRight } from 'react-icons/hi';
 import type { Theme } from 'theme-ui';
 import { BaseStyles, ThemeProvider } from 'theme-ui';
-import { theme as baseTheme } from '../src/theme';
-import { scaleAsArray } from '../src/utils';
+import { theme as baseTheme } from '../index';
+import { scaleAsArray } from '../utils';
 
 const Sheet: React.FC<{ theme: Theme; name: string }> = ({
   theme = baseTheme,
