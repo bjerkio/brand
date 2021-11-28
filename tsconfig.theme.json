@@ -9,5 +9,9 @@
     "moduleResolution": "Node",
     "outDir": "./dist/esm"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "theme/**/*",
+    "tokens/**/*",
+    "index.ts"
+  ]
 }

@@ -22,7 +22,9 @@
     "incremental": true
   },
   "include": [
-    "src/**/*"
+    "theme/**/*",
+    "tokens/**/*",
+    "index.ts"
   ],
   "exclude": [
     "node_modules"
