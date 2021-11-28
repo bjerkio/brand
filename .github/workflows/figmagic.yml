@@ -12,16 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: mikaelvesavuori/figmagic-action@v1.0.0
+      - uses: actions/setup-node@v2
         with:
-          figma-url: ${{ secrets.FIGMA_URL }}
-          figma-token: ${{ secrets.FIGMA_TOKEN }}
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+          cache: yarn
 
+      - run: yarn install
+      - run: yarn download
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          path: tokens/
           commit-message: Update design tokens
           author: 'bjerk-bot <bjerk-bot@users.noreply.github.com>'
           committer: 'bjerk-bot <bjerk-bot@users.noreply.github.com>'
