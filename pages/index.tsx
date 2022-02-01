@@ -38,6 +38,12 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
       <Container sx={{ size: 'readable' }}>
         <Head>
           <title>Bjerk Theme</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;800&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <Flex as="main" sx={{ gap: 4, flexDirection: 'column' }}>
           <Box as="header" sx={{ color: 'text' }}>
