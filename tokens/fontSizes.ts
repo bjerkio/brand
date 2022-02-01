@@ -3,8 +3,8 @@
 const fontSizes = {
  "sub": "0.75rem",
  "paragraph": "1rem",
- "heading": "1.25rem",
- "title": "4rem"
+ "heading": "1.5rem",
+ "title": "3rem"
 } as const;
 
 export default fontSizes;
