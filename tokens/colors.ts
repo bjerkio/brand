@@ -4,6 +4,7 @@ const colors = {
  "green60": "rgba(149, 224, 200, 1)",
  "green80": "rgba(113, 214, 181, 1)",
  "green100": "rgba(78, 204, 163, 1)",
+ "green120": "rgba(46, 137, 108, 1)",
  "black60": "rgba(123, 127, 131, 1)",
  "black80": "rgba(79, 84, 90, 1)",
  "black100": "rgba(35, 41, 49, 1)",
@@ -14,7 +15,7 @@ const colors = {
  "secondary": "rgba(57, 114, 255, 1)",
  "background": "rgba(249, 245, 237, 1)",
  "text": "rgba(35, 41, 49, 1)",
- "muted": "rgba(182, 198, 223, 1)",
+ "muted": "rgba(149, 224, 200, 1)",
  "highlight": "rgba(241, 240, 176, 1)",
  "accent": "rgba(241, 240, 176, 1)"
 } as const;
