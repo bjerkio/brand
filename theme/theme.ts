@@ -26,7 +26,6 @@ export const theme = makeTheme({
   fonts,
   fontWeights,
   fontSizes: [
-    0,
     ...Object.values(fontSizes).map(
       fontSize => Number(fontSize.replace('rem', '')) * baseFontSize,
     ),
