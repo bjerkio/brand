@@ -2,7 +2,7 @@ import { Theme } from '@theme-ui/css';
 
 export const styles: Theme['styles'] = {
   root: {
-    backgroundColor: 'green20',
+    backgroundColor: 'background',
     fontFamily: 'body',
     lineHeight: 'body',
     fontWeight: 'body',
