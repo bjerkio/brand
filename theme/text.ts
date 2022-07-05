@@ -40,6 +40,5 @@ export const text: Theme['text'] = {
   subsection: {
     fontSize: 5,
     fontWeight: 'heading',
-  }
+  },
 };
-

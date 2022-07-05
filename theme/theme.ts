@@ -14,9 +14,9 @@ export const theme = makeTheme({
   },
   colors,
   fonts: {
-    body: 'Sora',
-    heading: 'Sora',
-    monospace: 'Sora',
+    body: 'Sora, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: 'inherit',
+    monospace: 'inherit',
   },
   fontWeights: {
     body: 400,
