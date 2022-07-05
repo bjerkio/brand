@@ -37,5 +37,9 @@ export const text: Theme['text'] = {
   contact: {
     fontSize: 0,
   },
+  subsection: {
+    fontSize: 5,
+    fontWeight: 'heading',
+  }
 };
 
