@@ -8,10 +8,11 @@ const baseFontSize = 16;
 export const theme = makeTheme({
   space: [8, 16, 24, 32, 48, 64, 96, 128, 192, 256],
   sizes: {
-    container: 1205,
-    readable: 770,
+    container: 1500,
+    readable: 940,
   },
   colors: {
+    access: '#4AD97B',
     blue20: '#C9D1FF',
     blue40: '#8FA1FF',
     blue60: '#7087FF',
@@ -22,14 +23,13 @@ export const theme = makeTheme({
     dark60: '#576379',
     dark80: '#273653',
     dark100: '#0F2040',
+    error: '#DC3B58',
     green20: '#EDF9F1',
     green40: '#D2FBE0',
     green60: '#BCF9C6',
     green80: '#A6F7AE',
     green100: '#90F494',
     warning: '#FFD464',
-    error: '#DC3B58',
-    access: '#4AD97B',
   },
   fonts: {
     body: 'Sora',
@@ -37,8 +37,8 @@ export const theme = makeTheme({
     monospace: 'Sora',
   },
   fontWeights: {
-    'body': 400,
-    'bold': 600,
+    body: 400,
+    heading: 600,
   },
   fontSizes: [16, 18, 20, 24, 28, 32, 48],
   text,
