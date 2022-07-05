@@ -8,7 +8,7 @@ export const text: Theme['text'] = {
   },
   title: {
     fontFamily: 'heading',
-    fontWeight: 'bold',
+    fontWeight: 'heading',
     lineHeight: 'heading',
   },
   heading: {
