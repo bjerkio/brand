@@ -11,8 +11,9 @@ import {
   Heading,
   Input,
   Label,
-  // Link,
+  Link,
   NavLink,
+  Paragraph,
   Radio,
   Select,
   Slider,
@@ -21,11 +22,10 @@ import {
 } from '@theme-ui/components';
 import { ColorPalette, TypeScale } from '@theme-ui/style-guide';
 import Head from 'next/head';
-import Link from 'next/link';
+//import Link from 'next/link';
 import React from 'react';
-import { HiArrowRight } from 'react-icons/hi';
 import type { Theme } from 'theme-ui';
-import { BaseStyles, ThemeProvider } from 'theme-ui';
+import { ThemeProvider } from 'theme-ui';
 import { theme as baseTheme } from '../index';
 import { scaleAsArray } from '../utils';
 
@@ -35,50 +35,55 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <Container sx={{ size: 'readable' }}>
+      <Container variant='layout.readable'>
         <Head>
           <title>Bjerk Theme</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;800&display=swap"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin=""
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"
             rel="stylesheet"
           />
         </Head>
         <Flex as="main" sx={{ gap: 4, flexDirection: 'column' }}>
           <Box as="header" sx={{ color: 'text' }}>
-            <Container>
-              <Heading as="h1" variant="title" sx={{ py: 4 }}>
-                Bjerk {name} Theme
-              </Heading>
-              <Flex sx={{ gap: 3 }}>
-                <NavLink href="https://github.com/bjerkio/brand">
+            <Container sx={{ pt: 4 }}>
+              <Text variant="title">Bjerk {name} Theme</Text>
+              <Flex sx={{ gap: 3, pt: 3 }}>
+                <Link variant="primary" href="https://github.com/bjerkio/brand">
                   GitHub
-                </NavLink>
-                <NavLink href="https://npmjs.com/package/@bjerk/brand">
+                </Link>
+                <Link
+                  variant="primary"
+                  href="https://npmjs.com/package/@bjerk/brand"
+                >
                   NPM
-                </NavLink>
-                <Link href="/">Base Theme</Link>
-                <Link href="/web">Web Theme</Link>
+                </Link>
+                <NavLink href="/">Base Theme</NavLink>
+                <NavLink href="/web">Web Theme</NavLink>
               </Flex>
             </Container>
           </Box>
-          <Card>
-            <Heading>Text styles</Heading>
-            <Grid gap={4}>
+          <Container sx={{ p:3, backgroundColor:'accent' }}>
+            <Box sx={{pb:3}}>
+            <Text variant="subsection">Text styles</Text>
+            </Box>
+            <Grid gap={1}>
               {Object.keys(theme.text).map(key => {
-                const Component = key.toLowerCase().includes('head')
-                  ? Heading
-                  : Text;
+                const Component = Text;
                 return (
                   <Flex
                     key={key}
                     sx={{
-                      gap: 3,
+                      gap: 1,
                       flexDirection: 'column',
                     }}
                   >
-                    <Text sx={{ color: 'secondary' }}>{key}</Text>
+                    <Text variant="subtitle">{key}</Text>
                     <Component variant={key}>
                       {
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet neque ultricies, mollis leo quis, luctus magna.'
@@ -89,11 +94,13 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 );
               })}
             </Grid>
-          </Card>
-          <Card>
-            <Heading>Base styles</Heading>
-            <Box as={BaseStyles}>
-              <p>
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+            <Text variant="subsection">Base styles</Text>
+            </Box>
+            <Box>
+              <Paragraph variant='text.standard' sx={{pb:1}}>
                 This is a whole paragraph of text, include{' '}
                 <code>code like this</code>, as well as{' '}
                 <a href="https://hackclub.com/">
@@ -103,14 +110,16 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 <a href="https://hackclub.com/">regular links</a>. The paragraph
                 ended up being 1 sentence, but now I guess it’s{' '}
                 <strong>two</strong>.
-              </p>
-              <pre>
+              </Paragraph>
+              <Paragraph variant='standard'>
                 <code>Here’s a code block! No highlighting to be found.</code>
-              </pre>
+              </Paragraph>
             </Box>
-          </Card>
-          <Card>
-            <Heading>Buttons</Heading>
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Buttons</Text>
+          </Box>
             <Flex sx={{ flexWrap: 'wrap', gap: 3 }}>
               {Object.keys(theme.buttons).map(key => (
                 <Button key={key} variant={key}>
@@ -118,20 +127,11 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 </Button>
               ))}
             </Flex>
-          </Card>
-          <Card>
-            <Heading>Buttons with Icon</Heading>
-            <Flex sx={{ flexWrap: 'wrap', gap: 3 }}>
-              {Object.keys(theme.buttons).map(key => (
-                <Button key={key} variant={key}>
-                  {key} btn
-                  <HiArrowRight />
-                </Button>
-              ))}
-            </Flex>
-          </Card>
-          <Card>
-            <Heading>Disabled Buttons</Heading>
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Disabled Buttons</Text>
+          </Box>
             <Flex sx={{ flexWrap: 'wrap', gap: 3 }}>
               {Object.keys(theme.buttons).map(key => (
                 <Button key={key} variant={key} disabled>
@@ -139,10 +139,12 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 </Button>
               ))}
             </Flex>
-          </Card>
+          </Container>
 
-          <Card>
-            <Heading>Spacing</Heading>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Spacing</Text>
+          </Box>
             <Flex sx={{ flexWrap: 'wrap', gap: 4 }}>
               {scaleAsArray(theme.space).map((s, key) => (
                 <Box key={key} sx={{ textAlign: 'center' }}>
@@ -152,10 +154,12 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 </Box>
               ))}
             </Flex>
-          </Card>
-          <Card>
-            <Heading>Forms</Heading>
-            <Grid gap={3} columns={[null, 2]} as="form">
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Forms</Text>
+          </Box>
+            <Grid gap={2} columns={[null, 2]} as="form">
               <Label>
                 Full name
                 <Input placeholder="Zach Latta" />
@@ -203,10 +207,12 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 sx={{ gridColumn: [null, 'span 2'] }}
               />
             </Grid>
-          </Card>
+          </Container>
 
-          <Card>
-            <Heading>Badges</Heading>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Badges</Text>
+          </Box>
             {Object.keys(theme.badges).map(key => (
               <Badge
                 key={key}
@@ -217,29 +223,32 @@ const Sheet: React.FC<{ theme: Theme; name: string }> = ({
                 {key}
               </Badge>
             ))}
-          </Card>
-          <Card>
-            <Heading>Colors</Heading>
+          </Container>
+          <Container sx={{ backgroundColor: 'white', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Colors</Text>
+          </Box>
             <ColorPalette
               omit={[
-                'modes',
-                'placeholder',
-                'twitter',
-                'instagram',
-                'facebook',
+                'error',
+                'warning',
               ]}
             />
-          </Card>
-          <Card>
-            <Heading>Type scale</Heading>
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Type scale</Text>
+          </Box>
             <TypeScale />
-          </Card>
-          <Card>
-            <Heading>Theme Object</Heading>
+          </Container>
+          <Container sx={{ backgroundColor: 'accent', p: 3 }}>
+          <Box sx={{pb:3}}>
+          <Text variant="subsection">Theme Object</Text>
+          </Box>
             <Text as="pre" variant="styles.pre">
               {JSON.stringify(theme, null, 2)}
             </Text>
-          </Card>
+          </Container>
         </Flex>
       </Container>
     </ThemeProvider>
