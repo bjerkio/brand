@@ -1,39 +1,31 @@
 import { makeTheme } from '@theme-ui/css/utils';
-import spacing from '../tokens/spacing';
-import radii from '../tokens/radii';
-import { text } from './text';
 import { buttons } from './buttons';
+import { colors } from './colors';
+import { layout } from './layout';
+import { links } from './links';
 import { styles } from './styles';
-
-const baseFontSize = 16;
+import { text } from './text';
 
 export const theme = makeTheme({
-  space: [
-    0,
-    ...Object.values(spacing).map(
-      space => Number(space.replace('rem', '')) * baseFontSize,
-    ),
-  ],
+  space: [8, 16, 24, 32, 48, 64, 96, 128, 192, 256],
   sizes: {
-    container: 1205,
-    readable: 770,
+    container: 1500,
+    readable: 940,
   },
-  colors: {
-
-  },
+  colors,
   fonts: {
-    
-  }
-  fontWeights,
-  fontSizes: [
-    0,
-    ...Object.values(fontSizes).map(
-      fontSize => Number(fontSize.replace('rem', '')) * baseFontSize,
-    ),
-  ],
+    body: 'Sora',
+    heading: 'Sora',
+    monospace: 'Sora',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 600,
+  },
+  fontSizes: [16, 18, 20, 24, 28, 32, 48],
+  links,
   text,
   buttons,
-  radii,
   badges: {},
   styles,
   forms: {
@@ -41,6 +33,7 @@ export const theme = makeTheme({
       gap: 2,
     },
   },
+  layout,
   cards: {
     primary: {
       display: 'flex',
