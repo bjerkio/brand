@@ -1,16 +1,23 @@
 import { Theme } from '@theme-ui/css';
 
 const baseStyle = {
-  display: 'flex',
-  gap: 2,
-  alignItems: 'center',
+  fontFamily: 'body',
+  color: 'dark100',
+  p: 3,
+  borderRadius: '30px',
+  width: 'fit-content',
 };
 
 export const buttons: Theme['buttons'] = {
   primary: baseStyle,
   secondary: {
     ...baseStyle,
-    color: 'white',
-    bg: 'secondary',
+    backgroundColor: 'green20',
+  },
+  tertiary: {
+    ...baseStyle,
+    backgroundColor: 'transparent',
+    boxShadow:
+      '2px 4px 11px rgba(0, 0, 0, 0.1), inset 3px 4px 9px rgba(255, 255, 255, 0.15)',
   },
 };
