@@ -1,9 +1,5 @@
 import { makeTheme } from '@theme-ui/css/utils';
 import spacing from '../tokens/spacing';
-import colors from '../tokens/colors';
-import fonts from '../tokens/fontFamilies';
-import fontWeights from '../tokens/fontWeights';
-import fontSizes from '../tokens/fontSizes';
 import radii from '../tokens/radii';
 import { text } from './text';
 import { buttons } from './buttons';
@@ -22,8 +18,12 @@ export const theme = makeTheme({
     container: 1205,
     readable: 770,
   },
-  colors,
-  fonts,
+  colors: {
+
+  },
+  fonts: {
+    
+  }
   fontWeights,
   fontSizes: [
     0,
