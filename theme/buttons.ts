@@ -9,12 +9,7 @@ const baseStyle = {
 };
 
 export const buttons: Theme['buttons'] = {
-  primary: baseStyle,
-  secondary: {
-    ...baseStyle,
-    backgroundColor: 'green20',
-  },
-  tertiary: {
+  primary: {
     ...baseStyle,
     backgroundColor: 'transparent',
     boxShadow:
