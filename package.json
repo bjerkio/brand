@@ -26,8 +26,8 @@
     "@mdx-js/loader": "^1.6.21",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^12.0.7",
-    "@theme-ui/components": "^0.13.0",
-    "@theme-ui/style-guide": "0.14.0-develop.13",
+    "@theme-ui/components": "^0.16.0",
+    "@theme-ui/style-guide": "0.16.0",
     "@types/react": "^17.0.38",
     "eslint": "^8.6.0",
     "jest": "^27.4.5",
@@ -36,7 +36,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
-    "theme-ui": "^0.13.0",
+    "theme-ui": "^0.16.0",
     "typescript": "^4.5.4",
     "@simenandre/prettier": "3.0.2"
   },
@@ -44,6 +44,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "theme-ui": "^0.13"
+    "theme-ui": "^0.16.0"
   }
 }
