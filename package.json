@@ -20,7 +20,7 @@
   },
   "prettier": "@simenandre/prettier",
   "devDependencies": {
-    "@bjerk/eslint-config": "^1.0.0",
+    "@bjerk/eslint-config": "^4.0.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mdx-js/loader": "^1.6.21",
